@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  # 1. Ton application web (la calculatrice)
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+
+  # 2. Ta base de données PostgreSQL
+  db:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: nassim
+      POSTGRES_PASSWORD: superpassword123
+      POSTGRES_DB: calculatrice_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+# On définit un volume pour ne pas perdre les données quand le conteneur s'arrête
+volumes:
+  postgres_data:
