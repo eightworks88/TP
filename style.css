@@ -60,7 +60,7 @@ button:hover {
 }
 
 .clear {
-    background-color: #ff3b30;
+    background-color: #ff3e34;
 }
 
 .clear:hover {
@@ -68,5 +68,6 @@ button:hover {
 }
 
 .zero {
-    grid-column: span 2; /* Le bouton 0 prend la largeur de deux colonnes */
+    grid-column: span 2;
+    /* Le bouton 0 prend la largeur de deux colonnes */
 }
